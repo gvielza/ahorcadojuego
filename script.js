@@ -1,0 +1,3 @@
+function escoger(){
+    alert ("dd");
+}

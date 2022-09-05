@@ -1,0 +1,38 @@
+img{
+   
+    border-radius: 10px;
+}
+body{
+    background: rgb(234,231,240);
+    background: linear-gradient(43deg, rgb(14, 3, 37) 15%, rgb(28, 2, 49) 100%);
+   
+}
+main{
+    background-color: rgb(104, 104, 99);
+    height: 500px;
+    width: 500px;
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-30%);
+    text-align: center;
+}
+.botones{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%);
+    }
+    button{
+        background-color: #38628E ;
+        padding: 10px;
+        border-radius: 5px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    }
+    button:hover{
+        background-color: #183F9F;
+        padding: 12px;
+        transition: 50ms;
+
+    }
