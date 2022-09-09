@@ -18,13 +18,19 @@
 
     <main>
       <h1>Juego el ahorcado!</h1>
-      <section id="juego">
+      <section id="juego" >
         <div class="circle"></div>
         <div class="cuerpo"></div>
         <div class="piso"></div>
-        <div class="palabra" >
+        <div class="brazos"></div>
+        <div class="piernaizq"></div>
+        <div class="piernader"></div>
+
+        <div class="soga"></div>
+        <div class="palabra" id="texto">
           
-          <div class="uno" ></div>
+          
+          <div class="uno"></div>
           <div class="dos"></div>
           <div class="tres"></div>
           <div class="cuatro"></div>
@@ -34,12 +40,14 @@
           <div class="ocho"></div>
           <div class="nueve"></div>
           <div class="diez"></div>
-        </div>
+                 </div>
+                 <div class="botones">
+                  <button onclick="dibujarlineas()" >Iniciar Juego</button>
+                  <button>Reiniciar</button>
+                </div>
+                
       </section>
-      <div class="botones">
-      <button onclick="dibujarlineas()" >Iniciar Juego</button>
-      <button>Reiniciar</button>
-    </div>
+      <button class="botones btn_iniciar" id="btn_iniciar" onclick="iniciarJuego()">Iniciar Juego</button>
     </main>
   </body>
 </html>

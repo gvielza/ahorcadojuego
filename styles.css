@@ -32,11 +32,18 @@ button:hover {
   padding: 12px;
   transition: 50ms;
 }
+.btn_iniciar{
+ position: absolute;
+ top: 50%;
+ visibility: visible;
+}
 #juego {
   margin: 10px;
+  margin-top: -10px;
   height: 300px;
   background-color: #183f9f;
   border-radius: 5px;
+  visibility: hidden;
 }
 .piso{
   height: 3px;
@@ -69,6 +76,44 @@ button:hover {
   left: 50%;
   transform: translate(-58%, -20%);
 }
+.soga {
+  height: 8px;
+  width: 3px;
+  background-color: black;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-58%, -20%);
+}
+.brazos{
+  height: 3px;
+  width: 70px;
+  background-color: black;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.piernaizq{
+  height: 3px;
+  width: 60px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  transform: rotate(50deg);
+}
+.piernader{
+  height: 3px;
+  width: 60px;
+  background-color: black;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  transform: rotate(-50deg);
+}
 .uno,.dos,.tres,.cuatro,.cinco,.seis,.siete,.ocho,.nueve,.diez{
   height: 3px;
   width: 20px;
@@ -76,7 +121,7 @@ button:hover {
   position:absolute;
   left: 10%;
   bottom: 30%;
-visibility: hidden;  
+ 
 }
 .dos{
    left: 20%;
