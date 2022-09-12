@@ -13,12 +13,13 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body onkeydown="letraPresionada(event);">
     <script src="script.js"></script>
 
     <main>
       <h1>Juego el ahorcado!</h1>
       <section id="juego" >
+        <div class="hombre" id="hombre">
         <div class="circle"></div>
         <div class="cuerpo"></div>
         <div class="piso"></div>
@@ -27,23 +28,28 @@
         <div class="piernader"></div>
 
         <div class="soga"></div>
+        <div class="lateral"></div>
+        <div class="arriba"></div>
+      </div>
         <div class="palabra" id="texto">
           
           
-          <div class="uno"></div>
-          <div class="dos"></div>
-          <div class="tres"></div>
-          <div class="cuatro"></div>
-          <div class="cinco"></div>
-          <div class="seis"></div>
-          <div class="siete"></div>
-          <div class="ocho"></div>
-          <div class="nueve"></div>
-          <div class="diez"></div>
+          <div class="uno" id="uno"></div>
+          <div class="dos" id="dos"></div>
+          <div class="tres" id="tres"></div>
+          <div class="cuatro" id="cuatro"></div>
+          <div class="cinco" id="cinco"></div>
+          <div class="seis" id="seis"></div>
+          <div class="siete" id="siete"></div>
+          <div class="ocho" id="ocho"></div>
+          <div class="nueve" id="nueve"></div>
+          <div class="diez" id="diez"></div>
+          <div class="once" id="diez"></div>
+        
                  </div>
                  <div class="botones">
-                  <button onclick="dibujarlineas()" >Iniciar Juego</button>
-                  <button>Reiniciar</button>
+                  <button onclick="reiniciar()" >Nuevo Juego</button>
+                  <button>Agregar Palabra</button>
                 </div>
                 
       </section>
