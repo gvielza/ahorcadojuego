@@ -173,6 +173,45 @@ button:hover {
 .once{
   left: 85%;
 }
+#spanuno,#spandos,#spantres,#spancuatro,#spancinco,#spanseis,#spansiete,#spanocho,#spannueve,#spandiez,#spanonce{
+  height: 20px;
+  width: 20px;
+  background-color: aquamarine;
+  position:absolute;
+  left: 5%;
+  bottom: 31%;
+ visibility: visible;
+}
+#spandos{
+  left: 13%;
+}
+#spantres{
+  left: 21%;
+}
+#spancuatro{
+  left: 29%;
+}
+#spancinco{
+  left: 37%;
+}
+#spanseis{
+  left: 45%;
+}
+#spansiete{
+  left: 53%;
+}
+#spanocho{
+  left: 61%;
+}
+#spannueve{
+  left: 69%;
+}
+#spandiez{
+  left: 77%;
+}
+#spanonce{
+  left: 85%;
+}
 
 
 

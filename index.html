@@ -18,22 +18,31 @@
 
     <main>
       <h1>Juego el ahorcado!</h1>
-      <section id="juego" >
+      <section id="juego">
         <div class="hombre" id="hombre">
-        <div class="circle"></div>
-        <div class="cuerpo"></div>
-        <div class="piso"></div>
-        <div class="brazos"></div>
-        <div class="piernaizq"></div>
-        <div class="piernader"></div>
+          <div class="circle" id="circle"></div>
+          <div class="cuerpo" id="cuerpo"></div>
+          <div class="piso"></div>
+          <div class="brazos"></div>
+          <div class="piernaizq"></div>
+          <div class="piernader"></div>
 
-        <div class="soga"></div>
-        <div class="lateral"></div>
-        <div class="arriba"></div>
-      </div>
+          <div class="soga"></div>
+          <div class="lateral"></div>
+          <div class="arriba"></div>
+        </div>
         <div class="palabra" id="texto">
-          
-          
+          <span id="spanuno"></span>
+          <span id="spandos"></span>
+          <span id="spantres"></span>
+          <span id="spancuatro"></span>
+          <span id="spancinco">   </span>
+          <span id="spanseis"></span>
+          <span id="spansiete"></span
+          ><span id="spanocho"></span>
+          <span id="spannueve"></span>
+          <span id="spandiez"></span>
+          <span id="spanonce"></span>
           <div class="uno" id="uno"></div>
           <div class="dos" id="dos"></div>
           <div class="tres" id="tres"></div>
@@ -45,15 +54,19 @@
           <div class="nueve" id="nueve"></div>
           <div class="diez" id="diez"></div>
           <div class="once" id="diez"></div>
-        
-                 </div>
-                 <div class="botones">
-                  <button onclick="reiniciar()" >Nuevo Juego</button>
-                  <button>Agregar Palabra</button>
-                </div>
-                
+        </div>
+        <div class="botones">
+          <button onclick="reiniciar()">Nuevo Juego</button>
+          <button>Agregar Palabra</button>
+        </div>
       </section>
-      <button class="botones btn_iniciar" id="btn_iniciar" onclick="iniciarJuego()">Iniciar Juego</button>
+      <button
+        class="botones btn_iniciar"
+        id="btn_iniciar"
+        onclick="iniciarJuego()"
+      >
+        Iniciar Juego
+      </button>
     </main>
   </body>
 </html>

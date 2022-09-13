@@ -1,9 +1,12 @@
+let palabraActual;
+
 function crearPalabraSecreta() {
   const palabra = palabraAleatoria();
   document.getElementById("uno").style.visibility = "visible";
   document.getElementById("dos").style.visibility = "visible";
   alert(palabra.length);
   dibujarGuiones(palabra.length);
+  return palabra;
   }
 function iniciarJuego() {
   var btn_iniciar = document.getElementById("btn_iniciar");
@@ -13,25 +16,102 @@ function iniciarJuego() {
   var hombre = document.getElementById("hombre");
   hombre.style.visibility = "hidden";
   juego.style.visibility = "visible";
-  crearPalabraSecreta();
+  palabraActual=crearPalabraSecreta();
+  alert(palabraActual);
   
 }
 //setInterval(iniciarJuego(),10000);
 
 function letraPresionada(event){
   if (event.keyCode<65||event.keyCode>90) {
-    alert("mala ele");
+    alert("Debe seleccionar solo letras");
   }
   else{
-    dibujaLetra(event.key)
+    obtenerLetra(event.key)
+    
   }
  
 }
-
-function dibujaLetra(letra){
+let contador=0;
+let erradas=[];
+function obtenerLetra(letra){
+  
   alert(letra);
+  for (let index = 0; index < palabraActual.length; index++) {
+
+  if(letra===palabraActual[index]){
+    dibujaLetra(letra,index);
+    contador=0;
+    return;
+    
+  }
+ else{
+    erradas.push(palabraActual[index]);
+    dibujaHombre(erradas);
+    alert(erradas)    
+  }
+ 
+  }
 
 }
+function dibujaHombre(err){
+
+  if(err.length==1){
+    document.getElementById("circle").style.visibility="visible";}
+    if(err.length==2){
+      document.getElementById("cuerpo").style.visibility="visible";}
+
+}
+
+
+
+//funcion que dibuja letra
+function dibujaLetra(letra,index){
+  if (index===1) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spandos").appendChild(text);
+}if (index===0) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spanuno").appendChild(text);
+}
+if (index===2) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spantres").appendChild(text);
+}
+if (index===3) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spancuatro").appendChild(text);
+}
+if (index===4) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spancinco").appendChild(text);
+}
+if (index===5) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spanseis").appendChild(text);
+}
+if (index===6) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spansiete").appendChild(text);
+}
+if (index===7) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spanocho").appendChild(text);
+}
+if (index===8) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spannueve").appendChild(text);
+}
+if (index===9) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spandiez").appendChild(text);
+}
+if (index===10) {   
+  var text=document.createTextNode(letra); 
+  document.getElementById("spanonce").appendChild(text);
+}
+}
+
 
 //funcion devuelve palabra aleatoria
 function palabraAleatoria() {
