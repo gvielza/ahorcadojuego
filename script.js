@@ -1,5 +1,9 @@
 let palabraActual;
 
+function reiniciarJuego(){
+  
+}
+
 function crearPalabraSecreta() {
   const palabra = palabraAleatoria();
   document.getElementById("uno").style.visibility = "visible";
@@ -11,6 +15,7 @@ function crearPalabraSecreta() {
 function iniciarJuego() {
   var btn_iniciar = document.getElementById("btn_iniciar");
   btn_iniciar.style.display = "none";
+  btn_agregar.style.display='none';
 
   var juego = document.getElementById("juego");
   var hombre = document.getElementById("hombre");
@@ -19,7 +24,7 @@ function iniciarJuego() {
   palabraActual = crearPalabraSecreta();
   console.log(palabraActual);
 }
-//setInterval(iniciarJuego(),10000);
+
 let errados = 0;
 let aciertos = 0;
 function letraPresionada(event) {
@@ -47,7 +52,8 @@ if(palabraActual.includes(letra)){
     
      
     }
-  }}
+  }
+}
     else { 
       errados++;
       contador++;
@@ -58,8 +64,26 @@ if(palabraActual.includes(letra)){
       
     
   }
+  if (aciertos===palabraActual.length) {
+    setTimeout(ganaste, 500);
+  }
+  if(errados===8){
+    setTimeout(perder, 500);
+  }
   
 }
+function ganaste(){
+ 
+  document.getElementById("ganaste").style.visibility="visible";
+  document.getElementById("ganastes").style.visibility="visible";
+  
+}
+function perder(){
+  document.getElementById("perdiste").style.visibility="visible";
+   document.getElementById("perdistes").style.visibility="visible";
+  
+}
+
 function dibujaHombre(errados) {
   if (errados == 1) {
     document.getElementById("circle").style.visibility = "visible";
@@ -133,13 +157,11 @@ function dibujaLetra(letra, index) {
   if (index === 10) {
     var text = document.createTextNode(letra);
     document.getElementById("spanonce").appendChild(text);
-    perder();
+    
   }
 }
 
-function perder(){
-  document.body.innerHTML="perdise";
-}
+
 
 //funcion devuelve palabra aleatoria
 function palabraAleatoria() {

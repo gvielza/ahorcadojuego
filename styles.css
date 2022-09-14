@@ -15,6 +15,7 @@ main {
   transform: translate(-50%, -30%);
   text-align: center;
 }
+
 .botones {
   position: absolute;
   top: 90%;
@@ -213,6 +214,80 @@ button:hover {
 }
 #spanonce{
   left: 85%;
+}
+h2{
+  
+  color: yellow;
+  animation: ganar .9s alternate infinite ease-in;
+  visibility: hidden; 
+  font-size: 30px;
+  position: absolute;
+  left: 45%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+h3{
+  
+  color: yellow;
+  animation: ganarr .9s alternate infinite ease-in;
+  visibility: hidden; 
+  font-size: 30px;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width:701px) {
+  @keyframes ganar {
+    0% {
+      left: 75%;
+      transform: scale(0);
+      color: aqua;
+    }
+    100% {
+      left: 75%;
+      transform: scale(2);
+    }
+  }
+}
+@media screen and (min-width:701px) {
+  @keyframes ganarr {
+    0% {
+      left: 15%;
+      transform: scale(2);
+      color: aqua;
+    }
+    100% {
+      left: 15%;
+      transform: scale(1);
+    }
+  }
+}
+@media screen and (max-width:700px) {
+  @keyframes ganar {
+    0% {
+      left: 75%;
+      transform: scale(0);
+      color: aqua;
+    }
+    100% {
+      left: 75%;
+      transform: scale(1);
+    }
+  }
+}
+@media screen and (max-width:700px) {
+  @keyframes ganarr {
+    0% {
+      left: 15%;
+      transform: scale(1);
+      color: aqua;
+    }
+    100% {
+      left: 15%;
+      transform: scale(0);
+    }
+  }
 }
 
 

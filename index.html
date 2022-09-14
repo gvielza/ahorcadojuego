@@ -17,8 +17,10 @@
     <script src="script.js"></script>
 
     <main>
-      <h1>Juego el ahorcado!</h1>
+      <h1>Juega al ahorcado!</h1>
+      
       <section id="juego">
+      
         <div class="hombre" id="hombre">
           <div class="circle" id="circle"></div>
           <div class="cuerpo" id="cuerpo"></div>
@@ -56,8 +58,8 @@
           <div class="once" id="diez"></div>
         </div>
         <div class="botones">
-          <button onclick="reiniciar()">Nuevo Juego</button>
-          <button>Agregar Palabra</button>
+          <button onclick="reiniciarJuego()">Nuevo Juego</button>
+          <button onclick="reiniciar()">Desistir</button>
         </div>
       </section>
       <span class="letraserradas" id="letraserradas"></span>
@@ -68,6 +70,12 @@
       >
         Iniciar Juego
       </button>
+      <button id="btn_agregar">Agregar Palabra</button>
     </main>
+    <h2 id="ganaste">Ganaste</h2>
+    <h3 id="ganastes">Ganaste</h3>
+    <h2 id="perdiste">Perdiste!</h2>
+    <h3 id="perdistes">Perdiste!</h3>
+    
   </body>
 </html>
