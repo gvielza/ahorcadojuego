@@ -63,6 +63,11 @@
         </div>
       </section>
       <span class="letraserradas" id="letraserradas"></span>
+      <div id="palabranueva">
+        <input type="text" name="palabraagregada" id="palabraagregada" placeholder="Esciba la palabra"/>
+        <button type="submit" onclick="agregarPalabra()">Agregar</button>
+      </div>
+      
       <button
         class="botones btn_iniciar"
         id="btn_iniciar"
@@ -70,7 +75,7 @@
       >
         Iniciar Juego
       </button>
-      <button id="btn_agregar">Agregar Palabra</button>
+      <button id="btn_agregar" onclick="agregar()">Agregar Palabra</button>
     </main>
     <h2 id="ganaste">Ganaste</h2>
     <h3 id="ganastes">Ganaste</h3>

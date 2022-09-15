@@ -1,7 +1,47 @@
 let palabraActual;
+let errados = 0;
+let aciertos = 0;
+let contador = 0;
+let letrascorrectas = [];
+let letrasincorrectas = [];
 
-function reiniciarJuego(){
-  
+function reiniciarJuego() {
+  document.getElementById("spanuno").innerHTML = "";
+  document.getElementById("spandos").innerHTML = "";
+  document.getElementById("spantres").innerHTML = "";
+  document.getElementById("spancuatro").innerHTML = "";
+  document.getElementById("spancinco").innerHTML = "";
+  document.getElementById("spanseis").innerHTML = "";
+  document.getElementById("spansiete").innerHTML = "";
+  document.getElementById("spanocho").innerHTML = "";
+  document.getElementById("spannueve").innerHTML = "";
+  document.getElementById("spandiez").innerHTML = "";
+  document.getElementById("spanonce").innerHTML = "";
+
+  document.getElementById("letraserradas").innerHTML = "";
+
+  document.getElementById("ganaste").style.visibility = "hidden";
+  document.getElementById("ganastes").style.visibility = "hidden";
+  document.getElementById("perdiste").style.visibility = "hidden";
+  document.getElementById("perdistes").style.visibility = "hidden";
+  document.getElementById("circle").style.visibility = "hidden";
+  document.getElementById("cuerpo").style.visibility = "hidden";
+  document.getElementById("soga").style.visibility = "hidden";
+  document.getElementById("piernaizq").style.visibility = "hidden";
+  document.getElementById("piernader").style.visibility = "hidden";
+  document.getElementById("lateral").style.visibility = "hidden";
+  document.getElementById("arriba").style.visibility = "hidden";
+  document.getElementById("piso").style.visibility = "hidden";
+  document.getElementById("brazos").style.visibility = "hidden";
+
+  letrascorrectas = [];
+  letrasincorrectas = [];
+
+  errados = 0;
+  aciertos = 0;
+  dibujarGuiones(0);
+
+  iniciarJuego();
 }
 
 function crearPalabraSecreta() {
@@ -13,9 +53,10 @@ function crearPalabraSecreta() {
   return palabra;
 }
 function iniciarJuego() {
+  console.log(palabras)
   var btn_iniciar = document.getElementById("btn_iniciar");
   btn_iniciar.style.display = "none";
-  btn_agregar.style.display='none';
+  btn_agregar.style.display = "none";
 
   var juego = document.getElementById("juego");
   var hombre = document.getElementById("hombre");
@@ -25,8 +66,6 @@ function iniciarJuego() {
   console.log(palabraActual);
 }
 
-let errados = 0;
-let aciertos = 0;
 function letraPresionada(event) {
   if (event.keyCode < 65 || event.keyCode > 90) {
     alert("Debe seleccionar solo letras");
@@ -35,53 +74,41 @@ function letraPresionada(event) {
     obtenerLetra(event.key);
   }
 }
-let contador = 0;
 
-function obtenerLetra(letra) { 
-  
-if(palabraActual.includes(letra)){
+function obtenerLetra(letra) {
+  if (palabraActual.includes(letra)) {
+    for (let index = 0; index < palabraActual.length; index++) {
+      if (letra === palabraActual[index]) {
+        dibujaLetra(letra, index);
 
-  for (let index = 0; index < palabraActual.length; index++) {
-    
-    
-    if (letra === palabraActual[index]) {
-      dibujaLetra(letra, index);
-      aciertos++;
-      
-      contador++;
-    
-     
+        contador++;
+        letrascorrectas.push(letra);
+        console.log(letrascorrectas);
+      }
     }
+  } else {
+    errados++;
+    contador++;
+    dibujaHombre(errados);
+    let letraAct = document.createTextNode(letra);
+
+    document.getElementById("letraserradas").appendChild(letraAct);
+
+    letrasincorrectas.push(letra);
   }
-}
-    else { 
-      errados++;
-      contador++;
-      dibujaHombre(errados);
-      let letraAct=document.createTextNode(letra);
-            
-      document.getElementById("letraserradas").appendChild(letraAct);
-      
-    
-  }
-  if (aciertos===palabraActual.length) {
-    setTimeout(ganaste, 500);
-  }
-  if(errados===8){
+
+  if (errados === 8) {
     setTimeout(perder, 500);
   }
-  
 }
-function ganaste(){
- 
-  document.getElementById("ganaste").style.visibility="visible";
-  document.getElementById("ganastes").style.visibility="visible";
-  
+
+function ganaste() {
+  document.getElementById("ganaste").style.visibility = "visible";
+  document.getElementById("ganastes").style.visibility = "visible";
 }
-function perder(){
-  document.getElementById("perdiste").style.visibility="visible";
-   document.getElementById("perdistes").style.visibility="visible";
-  
+function perder() {
+  document.getElementById("perdiste").style.visibility = "visible";
+  document.getElementById("perdistes").style.visibility = "visible";
 }
 
 function dibujaHombre(errados) {
@@ -114,59 +141,68 @@ function dibujaHombre(errados) {
 
 //funcion que dibuja letra
 function dibujaLetra(letra, index) {
-  if (index === 1) {
+  if (index === 1 && document.getElementById("spandos").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spandos").appendChild(text);
+    aciertos++;
   }
-  if (index === 0) {
+  if (index === 0 && document.getElementById("spanuno").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spanuno").appendChild(text);
+    aciertos++;
   }
-  if (index === 2) {
+  if (index === 2 && document.getElementById("spantres").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spantres").appendChild(text);
+    aciertos++;
   }
-  if (index === 3) {
+  if (index === 3 && document.getElementById("spancuatro").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spancuatro").appendChild(text);
+    aciertos++;
   }
-  if (index === 4) {
+  if (index === 4 && document.getElementById("spancinco").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spancinco").appendChild(text);
+    aciertos++;
   }
-  if (index === 5) {
+  if (index === 5 && document.getElementById("spanseis").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spanseis").appendChild(text);
+    aciertos++;
   }
-  if (index === 6) {
+  if (index === 6 && document.getElementById("spansiete").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spansiete").appendChild(text);
+    aciertos++;
   }
-  if (index === 7) {
+  if (index === 7 && document.getElementById("spanocho").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spanocho").appendChild(text);
+    aciertos++;
   }
-  if (index === 8) {
+  if (index === 8 && document.getElementById("spannueve").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spannueve").appendChild(text);
+    aciertos++;
   }
-  if (index === 9) {
+  if (index === 9 && document.getElementById("spandiez").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spandiez").appendChild(text);
+    aciertos++;
   }
-  if (index === 10) {
+  if (index === 10 && document.getElementById("spanonce").innerHTML === "") {
     var text = document.createTextNode(letra);
     document.getElementById("spanonce").appendChild(text);
-    
+    aciertos++;
+  }
+  if (aciertos === palabraActual.length) {
+    setTimeout(ganaste, 500);
   }
 }
 
-
-
-//funcion devuelve palabra aleatoria
-function palabraAleatoria() {
-  const ctdadPalabras = 10;
-  const palabras = [
+let ctdadPalabras = 10;
+  let palabras = [
     "javascript",
     "html",
     "css",
@@ -178,8 +214,28 @@ function palabraAleatoria() {
     "desarrollo",
     "api",
   ];
+//funcion devuelve palabra aleatoria
+function palabraAleatoria() {
+  
   const indice = Math.round(Math.random() * (ctdadPalabras - 1 - 0) + 0);
   return palabras[indice];
+}
+
+function agregar(){
+  document.getElementById("btn_iniciar").style.visibility="hidden";
+  document.getElementById("btn_agregar").style.visibility="hidden";
+  document.getElementById("palabranueva").style.visibility="visible";
+}
+//funcion que agrega una palabra
+function agregarPalabra(){
+let texto=document.getElementById("palabraagregada").value;
+palabras.push(texto);
+ctdadPalabras++;
+console.log(palabras);
+localStorage.setItem("palabras",JSON.stringify(palabras));
+localStorage.setItem("ctdadPalabras",JSON.stringify(ctdadPalabras));
+
+location.reload();
 }
 //funcion para reiniciar
 function reiniciar() {
@@ -188,6 +244,19 @@ function reiniciar() {
 
 //funcion que me dibuja los guiones
 function dibujarGuiones(numero) {
+  if (numero === 0) {
+    document.getElementById("uno").style.visibility = "hidden";
+    document.getElementById("dos").style.visibility = "hideen";
+    document.getElementById("tres").style.visibility = "hidden";
+    document.getElementById("cuatro").style.visibility = "hidden";
+    document.getElementById("cinco").style.visibility = "hidden";
+    document.getElementById("seis").style.visibility = "hidden";
+    document.getElementById("siete").style.visibility = "hidden";
+    document.getElementById("ocho").style.visibility = "hidden";
+    document.getElementById("nueve").style.visibility = "hidden";
+    document.getElementById("diez").style.visibility = "hidden";
+  }
+
   if (numero === 3) {
     document.getElementById("tres").style.visibility = "visible";
   }

@@ -14,6 +14,15 @@ main {
   top: 30%;
   transform: translate(-50%, -30%);
   text-align: center;
+
+}
+input{
+  padding: 10px;
+  border-radius: 5px;
+}
+ 
+#palabranueva{
+  visibility: hidden;
 }
 
 .botones {
@@ -46,6 +55,8 @@ button:hover {
   background-color: #183f9f;
   border-radius: 5px;
   visibility: hidden;
+  border-style: inset;
+  border-color: black;
 }
 .piso{
   height: 3px;
